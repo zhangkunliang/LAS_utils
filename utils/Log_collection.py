@@ -6,7 +6,7 @@ import psycopg2
 from Postgresql_connect import connect
 
 
-conn = connect("espc", "espcpostgres", "85e11609511899a4928ec8900667baaf", "10.65.189.176", "5432")
+conn = connect("espc", "espcpostgres", "", "10.65.189.176", "5432")
 cursor = conn.cursor()
 def write_points_pg(time, name, PID, CPU_P, CPU, MEM_P, IO):
     sql = """INSERT INTO monitor_info (time, name, PID, CPU_P, CPU, MEM_P, IO) VALUES (%s, %s, %s, %s, %s, %s, %s)"""
